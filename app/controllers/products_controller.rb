@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.create(product: params[:procuct])
+    @product = Product.create(product: params[:product])
     render json: @product
   end
 
