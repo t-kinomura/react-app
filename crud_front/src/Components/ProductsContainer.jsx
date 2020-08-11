@@ -7,7 +7,7 @@ class ProductsContainer extends React.Component {
       <div className="productList">
         {this.props.productData.map((data) => {
           return(
-            <ViewProduct data={ data } key={ data.id } />
+            <ViewProduct data={ data } key={ data.id } onDelete={this.props.deleateProduct} onUpdate={this.props.updateProduct}/>
           );
         })}
       </div>

@@ -2,6 +2,22 @@ import React from 'react';
 import { Button, FormGroup, FormControl } from 'react-bootstrap';
 
 class FormContainer extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      product: ''
+    }
+  }
+
+  onChangetext(e) {
+    this.setState({product: e.target.value})
+  }
+
+  handleSubmit = () => {
+    this.props.createProduct(this.state.product);
+    this.setState({product: ''});
+  }
+
   render () {
     return (
       <div>
@@ -20,3 +36,5 @@ class FormContainer extends React.Component {
     );
   }
 }
+
+export default FormContainer;
